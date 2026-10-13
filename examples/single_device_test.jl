@@ -5,13 +5,13 @@ using OrdinaryDiffEqSDIRK
 using LinearAlgebra
 import ForwardDiff as FD
 using ModelingToolkit: t_nounits as t
-include(joinpath(@__DIR__, "..", "src", "PowerEMT.jl"))
-using .PowerEMT
+include(joinpath(@__DIR__, "..", "src", "DiffPower.jl"))
+using .DiffPower
 
 # ============================================================
 # single GFM test
 # ============================================================
-@named sg = PowerEMT.VSG(params = (; ratio = 5, lg = 0.2))
+@named sg = DiffPower.VSG(params = (; ratio = 5, lg = 0.2))
 input_eqs = [
 	sg.ud ~ 0.0,
 	sg.uq ~ 1.0,

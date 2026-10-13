@@ -1,4 +1,4 @@
-"""MATPOWER case9 converted to PowerEMT's `(base_mva, bus, gen, branch)` format."""
+"""MATPOWER case9 converted to DiffPower's `(base_mva, bus, gen, branch)` format."""
 function ieee9_case()
 	base_mva = 100.0
 	bus = Float64[

@@ -2,7 +2,7 @@
 # 按 ## 分段执行，或在已有 Julia 包环境里 include 本文件。
 # 保留原来的单台 VSG、LCL 参数和固定电网输入；只延时最终桥电压。
 
-## 1. 加载包和本地 PowerEMT
+## 1. 加载包和本地 DiffPower
 using ModelingToolkit, OrdinaryDiffEq, DelayDiffEq, LinearAlgebra
 using OrdinaryDiffEqSDIRK: KenCarp4
 import CairoMakie as CM
@@ -10,11 +10,11 @@ import ForwardDiff as FD
 using SciMLBase: SciMLBase
 import SymbolicIndexingInterface as SII
 using ModelingToolkit: t_nounits as t
-include(joinpath(@__DIR__, "..", "src", "PowerEMT.jl"))
-using .PowerEMT
+include(joinpath(@__DIR__, "..", "src", "DiffPower.jl"))
+using .DiffPower
 
 ## 2. 与原 single_device_test 相同的模型
-@named sg = PowerEMT.VSG(params = (; ratio = 5, lg = 0.2))
+@named sg = DiffPower.VSG(params = (; ratio = 5, lg = 0.2))
 input_eqs = [sg.ud ~ 0.0, sg.uq ~ 1.0, sg.ωr ~ 1.0]
 @named model = System(input_eqs, t; systems = [sg])
 model_c = mtkcompile(model)

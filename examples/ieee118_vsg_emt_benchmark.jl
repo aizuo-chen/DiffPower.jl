@@ -6,9 +6,9 @@ using Printf
 using SparseArrays
 using LinearSolve
 
-include(joinpath(@__DIR__, "..", "src", "PowerEMT.jl"))
-import .PowerEMT as PE
-using .PowerEMT: t
+include(joinpath(@__DIR__, "..", "src", "DiffPower.jl"))
+import .DiffPower as PE
+using .DiffPower: t
 
 function measured(f, label)
 	GC.gc()
@@ -36,7 +36,7 @@ const SPECIALIZATION = "--autospecialize" in ARGS ?
 TEND > STEP_TIME || error("simulation end time must exceed callback time $STEP_TIME")
 const SOLVER_NAME = "--kencarp4" in ARGS ? :KenCarp4 : :TRBDF2
 
-println("IEEE-118 all-VSG PowerEMT benchmark")
+println("IEEE-118 all-VSG DiffPower benchmark")
 println("Julia: ", VERSION, ", threads: ", Threads.nthreads())
 println("buses=$(size(bus, 1)), generators=$(size(gen, 1)), branches=$(size(branch, 1))")
 

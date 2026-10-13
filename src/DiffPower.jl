@@ -1,4 +1,4 @@
-module PowerEMT
+module DiffPower
 
 using ModelingToolkit
 using ModelingToolkit: t_nounits as t, D_nounits as D
@@ -63,4 +63,4 @@ export SG6, SG6Ref, SG_2
 export Line_fault
 export dev_trajs
 export extract_e_numbers, extract_vg_numbers, extract_v_numbers
-end # module PowerEMT
+end # module DiffPower

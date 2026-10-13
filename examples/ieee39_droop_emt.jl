@@ -4,9 +4,9 @@ using LinearAlgebra
 import ForwardDiff as FD
 import CairoMakie as CM
 
-include(joinpath(@__DIR__, "..", "src", "PowerEMT.jl"))
-import .PowerEMT as PE
-using .PowerEMT: t
+include(joinpath(@__DIR__, "..", "src", "DiffPower.jl"))
+import .DiffPower as PE
+using .DiffPower: t
 
 case_data = PE.ieee39_case()
 const BASE_MVA = case_data.base_mva

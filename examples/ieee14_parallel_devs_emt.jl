@@ -1,9 +1,9 @@
 using ModelingToolkit
 using OrdinaryDiffEq
 
-include(joinpath(@__DIR__, "..", "src", "PowerEMT.jl"))
-import .PowerEMT as PE
-using .PowerEMT: t
+include(joinpath(@__DIR__, "..", "src", "DiffPower.jl"))
+import .DiffPower as PE
+using .DiffPower: t
 
 data = PE.ieee14_case()
 const G_MIN = 1e-5
