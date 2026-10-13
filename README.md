@@ -1,7 +1,6 @@
 # DiffPower.jl
 
-This repository contains the DiffPower Julia module and examples for electromagnetic transient (EMT) simulation of power systems.
-
+This repository contains the DiffPower Julia module and examples for electromagnetic transient (EMT) simulation of power systems, with inverters represented by averaged models. Control delays are modeled explicitly using delay differential equations (DDEs). Using the same averaged inverter models, the simulation results agree with those obtained in MATLAB/Simulink. We plan to register DiffPower as a Julia package in the near future.
 ## Contents
 
 - `src/`: network composition, power flow, device models, fault models, and numerical Jacobian utilities.
