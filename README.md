@@ -1,6 +1,6 @@
-# PowerEMT
+# DiffPower.jl
 
-Julia / ModelingToolkit models and examples for electromagnetic transient (EMT) simulation of power systems.
+This repository contains the PowerEMT Julia module and examples for for electromagnetic transient (EMT) simulation of power systems.
 
 ## Contents
 
@@ -21,3 +21,4 @@ The core module imports ModelingToolkit, SciMLBase, JLD2, ForwardDiff, SymbolicI
 A standalone `Project.toml` and compatibility bounds have not yet been supplied. The examples have not been validated in a fresh standalone environment as part of this repository preparation.
 
 `examples/emt_dev6_firstsolve_comparison.jl` is a local comparison script that requires an external DiffPower checkout and data at machine-specific paths.
+
